@@ -36,7 +36,7 @@ public class SimpleExample {
     
     // read some text from the file..
     File inputFile = new File("src/test/resources/sample-content.txt");
-    String text = Files.toString(inputFile, Charset.forName("UTF-8"));
+    String text = Files.asCharSource(inputFile, Charset.forName("UTF-8")).read();
 
     // create an empty Annotation just with the given text
     Annotation document = new Annotation(text);
